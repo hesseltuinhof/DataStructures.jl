@@ -31,3 +31,7 @@ length(l::AbstractList) = nothing
 
 # Check if list is empty.
 isempty(l::AbstractList) = nothing
+
+### Generic
+
+eltype(l::AbstractList{T}) where T = T
