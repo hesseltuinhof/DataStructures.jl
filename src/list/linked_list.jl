@@ -60,7 +60,7 @@ function movetoend!(l::LinkedList)
 end
 
 function movetoposition!(l::LinkedList, pos)
-    !(1 <= pos <= l.cnt) && throw(ErrorException("Position out of range"))
+    (1 <= pos <= l.cnt) || throw(ErrorException("Position out of range"))
     l.curr = l.head
     for i = 1:pos-1
        l.curr = l.curr.next 
