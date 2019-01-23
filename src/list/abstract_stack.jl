@@ -14,6 +14,9 @@ topvalue(l::AbstractStack) = nothing
 # Return the number of elements in the stack.
 length(l::AbstractStack) = nothing
 
+# Check if stack is empty.
+isempty(l::AbstractStack) = nothing
+
 ### Generic
 
-eltype(l::AbstractList{T}) where T = T
+eltype(l::AbstractStack{T}) where T = T
