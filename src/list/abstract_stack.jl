@@ -3,20 +3,20 @@ abstract type AbstractStack{T} end
 ### Interface
 
 # Push an item onto the top of the stack.
-push!(l::AbstractStack, item) = nothing
+push!(s::AbstractStack, item) = nothing
 
 # Remove and return top element of the stack.
-pop!(l::AbstractStack) = nothing
+pop!(s::AbstractStack) = nothing
 
 # Return the top element.
-topvalue(l::AbstractStack) = nothing
+topvalue(s::AbstractStack) = nothing
 
 # Return the number of elements in the stack.
-length(l::AbstractStack) = nothing
+length(s::AbstractStack) = nothing
 
 # Check if stack is empty.
-isempty(l::AbstractStack) = nothing
+isempty(s::AbstractStack) = nothing
 
 ### Generic
 
-eltype(l::AbstractStack{T}) where T = T
+eltype(s::AbstractStack{T}) where T = T
