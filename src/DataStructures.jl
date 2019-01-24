@@ -20,7 +20,7 @@ export enqueue!, dequeue!, frontvalue
 
 # TODO put linknode out into own file and put it under abstract includes
 include("./list/abstract_list.jl")
-include("./list/abstract_queque.jl")
+include("./list/abstract_queue.jl")
 include("./list/abstract_stack.jl")
 
 include("./list/array_based_list.jl")
