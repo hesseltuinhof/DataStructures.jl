@@ -23,6 +23,9 @@ end
 function dequeue!(q::LinkedQueue)
     (q.size == 0) && throw(ArgumentError("Queue is empty"))
     item = q.front.next.data
+    if q.front.next === q.rear
+        q.rear = q.front
+    end
     q.front.next = q.front.next.next
     q.size -= 1
     return item
