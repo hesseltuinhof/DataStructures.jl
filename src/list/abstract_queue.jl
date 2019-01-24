@@ -11,7 +11,7 @@ dequeue!(q::AbstractQueue) = nothing
 # Return the front element.
 frontvalue(q::AbstractQueue) = nothing
 
-# Return the number of elements in the stack.
+# Return the number of elements in the queue.
 length(q::AbstractQueue) = nothing
 
 # Check if queue is empty.
