@@ -36,7 +36,7 @@ function insert!(l::LinkedList, item)
 end
 
 function append!(l::LinkedList, item)
-    l.tail = l.tail.next = LinkNode(item)
+    l.tail = l.tail.next = LinkNode{eltype(l)}(item)
     l.cnt += 1
 end
 
