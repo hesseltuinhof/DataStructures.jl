@@ -4,7 +4,7 @@ module DataStructures
 import Base: append!, insert!, pop!, push!
 import Base: eltype, isempty, length
 
-export AbstractList
+export AbstractList, AbstractNode
 export ArrayBasedList, LinkedList, LinkNode
 
 export AbstractStack
@@ -30,5 +30,17 @@ include("./list/array_based_list.jl")
 include("./list/linked_list.jl")
 include("./list/linked_queue.jl")
 include("./list/linked_stack.jl")
+
+# Binary trees related
+import Base: getkey
+
+export BinaryNode
+export BinarySearchNode
+
+export getvalue, setvalue!, left, setleft!, right, setright!, isleaf
+export getkey, setkey!
+
+include("./tree/abstract_binarynode.jl")
+include("./tree/binarysearch_node.jl")
 
 end
