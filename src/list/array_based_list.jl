@@ -18,7 +18,7 @@ isempty(l::ArrayBasedList) = l.size == 0
 length(l::ArrayBasedList) = l.size
 
 function insert!(l::ArrayBasedList, item)
-    (l.size >= l.maxsize) && throw(BoundsError("List capacity exceeded"))
+    (l.size < l.maxsize) || throw(BoundsError("List capacity exceeded"))
     for i = l.size:-1:l.curr+1
         l.data[i] = l.data[i-1]
     end
@@ -27,13 +27,14 @@ function insert!(l::ArrayBasedList, item)
 end
 
 function append!(l::ArrayBasedList, item)
-    (l.size >= l.maxsize) && throw(BoundsError("List capacity exceeded"))
+    (l.size < l.maxsize) || throw(BoundsError("List capacity exceeded"))
     l.size += 1
     l.data[l.size] = item
 end
 
 function remove!(l::ArrayBasedList)
     isempty(l) && throw(ArgumentError("List is empty"))
+    # TODO unhandled case: movetoend -> remove -> remove
     item = l.data[l.curr]
     for i = l.curr:l.size-1
         l.data[i] = l.data[i+1]
@@ -46,12 +47,14 @@ function movetostart!(l::ArrayBasedList)
     l.curr = 1
 end
 
+# TODO unhandled case: init list -> movetoend (set curr to 0)
+# resolve max(l.size, l.curr)
 function movetoend!(l::ArrayBasedList)
     l.curr = l.size
 end
 
 function movetoposition!(l::ArrayBasedList, pos)
-    (1 > pos > size) && throw(BoundsError("Position out of range"))
+    (1 <= pos <= l.size) || throw(BoundsError("Position out of range"))
     l.curr = pos
 end
 
