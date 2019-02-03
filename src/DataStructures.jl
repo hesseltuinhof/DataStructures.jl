@@ -13,15 +13,21 @@ export LinkedStack
 export AbstractQueque
 export LinkedQueue
 
+export AbstractDictionary
+
+
 export movetostart!, movetoposition!, movetoend!, prev!, next!, currentposition, getvalue
 export topvalue
 
 export enqueue!, dequeue!, frontvalue
 
+export remove!, removeany!, find
+
 # TODO put linknode out into own file and put it under abstract includes
 include("./list/abstract_list.jl")
 include("./list/abstract_queue.jl")
 include("./list/abstract_stack.jl")
+include("./list/abstract_dictionary.jl")
 
 include("./list/array_based_list.jl")
 #include("./list/array_based_queque.jl")
@@ -40,7 +46,10 @@ export BinarySearchNode
 export getvalue, setvalue!, left, setleft!, right, setright!, isleaf
 export getkey, setkey!
 
+export BinarySearchTree
+
 include("./tree/abstract_binarynode.jl")
 include("./tree/binarysearch_node.jl")
+include("./tree/binarysearch_tree.jl")
 
 end
