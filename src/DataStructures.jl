@@ -52,4 +52,15 @@ include("./tree/abstract_binarynode.jl")
 include("./tree/binarysearch_node.jl")
 include("./tree/binarysearch_tree.jl")
 
+
+
+# Internal sorting related
+
+include("./sort/swap.jl")
+include("./sort/insertion_sort.jl")
+include("./sort/selection_sort.jl")
+include("./sort/shellsort.jl")
+
+export insertionsort!, selectionsort!, shellsort!
+
 end
