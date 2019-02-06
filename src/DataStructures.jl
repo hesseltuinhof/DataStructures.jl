@@ -52,7 +52,17 @@ include("./tree/abstract_binarynode.jl")
 include("./tree/binarysearch_node.jl")
 include("./tree/binarysearch_tree.jl")
 
+# Graph related
+import Base: first
 
+export AbstractGraph
+export AdjacencyMatrix, Vertex
+
+export countedges, countvertices, first, next, setedge!, remove!, isedge
+export getweight, getmark, setmark!
+
+include("./graph/abstract_graph.jl")
+include("./graph/adjacency_matrix.jl")
 
 # Internal sorting related
 
