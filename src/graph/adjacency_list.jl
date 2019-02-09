@@ -58,7 +58,7 @@ function setedge!(g::AdjacencyList, v::Vertex, w::Vertex, weight)
             currentedge = getvalue(g.vertex[v])
             (_getvertex(currentedge) > w) && break
             next!(g.vertex[v])
-        ene
+        end
         insert!(g.vertex[v], edge)
     end
 end
