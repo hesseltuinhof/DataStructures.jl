@@ -56,12 +56,13 @@ include("./tree/binarysearch_tree.jl")
 import Base: first
 
 export AbstractGraph
-export AdjacencyMatrix, Vertex
+export AdjacencyList, AdjacencyMatrix, Vertex
 
 export countedges, countvertices, first, next, setedge!, remove!, isedge
 export getweight, getmark, setmark!
 
 include("./graph/abstract_graph.jl")
+include("./graph/adjacency_list.jl")
 include("./graph/adjacency_matrix.jl")
 
 # Internal sorting related
