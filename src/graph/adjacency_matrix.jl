@@ -1,13 +1,13 @@
 mutable struct AdjacencyMatrix <: AbstractGraph
     cntedge::Int
     cntvertex::Int
-    arr::AbstractMatrix
+    arr::AbstractMatrix # Should eventually be of type Vertex
     mark::Vector # 0...unvisited ; 1...visited
     function AdjacencyMatrix(n::Int)
         cntedge = 0
         cntvertex = n
-        arr = zeros(Int, n, n)
-        mark = zeros(Int, n)
+        arr = zeros(Int, cntvertex, cntvertex)
+        mark = zeros(Int, cntvertex)
         new(cntedge, cntvertex, arr, mark)
     end
 end
@@ -19,14 +19,14 @@ function first(g::AdjacencyMatrix, v::Vertex)
     for i = 1:g.cntvertex
         (g.arr[v, i] != 0) && return i
     end
-    return g.cntvertex
+    return g.cntvertex + 1
 end
 
 function next(g::AdjacencyMatrix, v::Vertex, w::Vertex)
     for i = w+1:g.cntvertex
         (g.arr[v, i] != 0) && return i
     end
-    return g.cntvertex
+    return g.cntvertex + 1
 end
 
 function setedge!(g::AdjacencyMatrix, v::Vertex, w::Vertex, weight)
