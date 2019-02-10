@@ -31,10 +31,10 @@ setvalue!(n::BinarySearchNode, item) = (n.data = item)
 getkey(n::BinarySearchNode) = n.key
 setkey!(n::BinarySearchNode, key) = (n.key = key)
 
-left(n::BinarySearchNode) = n.leftchild
-setleft!(n::BinarySearchNode, node) = (n.leftchild = node)
+leftchild(n::BinarySearchNode) = n.leftchild
+setleftchild!(n::BinarySearchNode, node) = (n.leftchild = node)
 
-right(n::BinarySearchNode) = n.rightchild
-setright!(n::BinarySearchNode, node) = (n.rightchild = node)
+rightchild(n::BinarySearchNode) = n.rightchild
+setrightchild!(n::BinarySearchNode, node) = (n.rightchild = node)
 
 isleaf(n::BinarySearchNode) = (n === n.leftchild === n.rightchild)
