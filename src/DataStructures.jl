@@ -1,8 +1,9 @@
 module DataStructures
 
-# List related
+### List related
+
 import Base: append!, insert!, pop!, push!
-import Base: eltype, isempty, length
+import Base: eltype, isempty, length, show
 
 export AbstractList, AbstractNode
 export ArrayBasedList, LinkedList, LinkNode
@@ -37,22 +38,30 @@ include("./list/linked_list.jl")
 include("./list/linked_queue.jl")
 include("./list/linked_stack.jl")
 
-# Binary trees related
-import Base: getkey
+### Binary trees related
+
+import Base: getkey, parent
 
 export BinaryNode
 export BinarySearchNode
 
-export getvalue, setvalue!, left, setleft!, right, setright!, isleaf
+export getvalue, setvalue!, setleftchild!, setrightchild!, isleaf
 export getkey, setkey!
 
-export BinarySearchTree
+export AbstractTree
+export BinarySearchTree, CompleteBinaryTree
+
+export parent, leftchild, rightchild, leftsibling, rightsibling
 
 include("./tree/abstract_binarynode.jl")
+include("./tree/abstract_tree.jl")
+
 include("./tree/binarysearch_node.jl")
 include("./tree/binarysearch_tree.jl")
+include("./tree/completebinary_tree.jl")
 
-# Graph related
+### Graph related
+
 import Base: first
 
 export AbstractGraph
@@ -62,16 +71,18 @@ export countedges, countvertices, first, next, setedge!, remove!, isedge
 export getweight, getmark, setmark!
 
 include("./graph/abstract_graph.jl")
+
 include("./graph/adjacency_list.jl")
 include("./graph/adjacency_matrix.jl")
 
-# Internal sorting related
+### Internal sorting related
 
 include("./sort/swap.jl")
 include("./sort/insertion_sort.jl")
+include("./sort/mergesort.jl")
 include("./sort/selection_sort.jl")
 include("./sort/shellsort.jl")
 
-export insertionsort!, selectionsort!, shellsort!
+export insertionsort!, mergesort!, selectionsort!, shellsort!
 
 end
