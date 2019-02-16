@@ -38,6 +38,7 @@ include("./list/linked_list.jl")
 include("./list/linked_queue.jl")
 include("./list/linked_stack.jl")
 
+
 ### Binary trees related
 
 import Base: getkey, parent
@@ -49,9 +50,10 @@ export getvalue, setvalue!, setleftchild!, setrightchild!, isleaf
 export getkey, setkey!
 
 export AbstractTree
-export BinarySearchTree, CompleteBinaryTree
+export BinarySearchTree, CompleteBinaryTree, Heap, MinHeap, MaxHeap
 
 export parent, leftchild, rightchild, leftsibling, rightsibling
+export peek, buildheap!
 
 include("./tree/abstract_binarynode.jl")
 include("./tree/abstract_tree.jl")
@@ -59,6 +61,7 @@ include("./tree/abstract_tree.jl")
 include("./tree/binarysearch_node.jl")
 include("./tree/binarysearch_tree.jl")
 include("./tree/completebinary_tree.jl")
+include("./tree/heap.jl")
 
 ### Graph related
 
@@ -70,10 +73,16 @@ export AdjacencyList, AdjacencyMatrix, Vertex
 export countedges, countvertices, first, next, setedge!, remove!, isedge
 export getweight, getmark, setmark!
 
+export breadthfirstsearch!, depthfirstsearch!, topologicalsort!
+
 include("./graph/abstract_graph.jl")
 
 include("./graph/adjacency_list.jl")
 include("./graph/adjacency_matrix.jl")
+
+include("./graph/bfs.jl")
+include("./graph/dfs.jl")
+include("./graph/topological_sort.jl")
 
 ### Internal sorting related
 
@@ -82,7 +91,8 @@ include("./sort/insertion_sort.jl")
 include("./sort/mergesort.jl")
 include("./sort/selection_sort.jl")
 include("./sort/shellsort.jl")
+include("./sort/quicksort.jl")
 
-export insertionsort!, mergesort!, selectionsort!, shellsort!
+export insertionsort!, mergesort!, selectionsort!, shellsort!, quicksort!
 
 end
