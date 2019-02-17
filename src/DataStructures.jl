@@ -12,7 +12,7 @@ export AbstractStack
 export LinkedStack
 
 export AbstractQueque
-export LinkedQueue
+export LinkedQueue, PriorityQueue, KeyValuePair
 
 export AbstractDictionary
 
@@ -62,6 +62,8 @@ include("./tree/binarysearch_node.jl")
 include("./tree/binarysearch_tree.jl")
 include("./tree/completebinary_tree.jl")
 include("./tree/heap.jl")
+
+include("./list/priorityqueue.jl") # belongs to list section
 
 ### Graph related
 
