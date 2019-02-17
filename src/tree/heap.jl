@@ -101,5 +101,5 @@ function buildheap!(h::Heap)
 end
 
 peek(h::Heap) = h.tree.data[1]
-# length() = nothing
-# isempty() = nothing
+length(h::Heap) = h.size
+isempty(h::Heap) = h.size == 0
