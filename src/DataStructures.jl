@@ -87,12 +87,14 @@ include("./graph/topological_sort.jl")
 ### Internal sorting related
 
 include("./sort/swap.jl")
+include("./sort/heapsort.jl")
 include("./sort/insertion_sort.jl")
 include("./sort/mergesort.jl")
 include("./sort/selection_sort.jl")
 include("./sort/shellsort.jl")
 include("./sort/quicksort.jl")
 
-export insertionsort!, mergesort!, selectionsort!, shellsort!, quicksort!
+export insertionsort!, mergesort!, selectionsort!, shellsort!
+export quicksort!, heapsort!
 
 end
