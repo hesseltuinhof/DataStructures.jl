@@ -97,4 +97,10 @@ include("./sort/quicksort.jl")
 export insertionsort!, mergesort!, selectionsort!, shellsort!
 export quicksort!, heapsort!
 
+### Others
+
+include("./search/binarysearch.jl")
+
+export binarysearch
+
 end
