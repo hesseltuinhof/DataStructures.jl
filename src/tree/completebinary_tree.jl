@@ -24,6 +24,15 @@ leftsibling(t::CompleteBinaryTree, pos) = pos&1 == 1 ? pos - 1 : 0
 rightsibling(t::CompleteBinaryTree, pos) = (pos&1 == 0) && (pos + 1 <= t.size) ? pos + 1 : 0
 isleaf(t::CompleteBinaryTree, pos) = (pos > t.size ÷ 2) && (pos <= t.size)
 
-# TODO this breaks interface of array-based list, where append! is used
-append!(t::CompleteBinaryTree, item) = (t.size += 1; push!(t.data, item))
 swap!(t::CompleteBinaryTree, i, j) = swap!(t.data, i, j)
+
+# TODO this breaks interface of array-based list, where append! is used
+function append!(t::CompleteBinaryTree, item)
+    if length(t.data) == t.size
+        t.size += 1
+        push!(t.data, item)
+    else
+        t.size += 1
+        t.data[t.size] = item
+    end
+end

@@ -58,7 +58,7 @@ end
 function insert!(h::Heap, item)
     (h.size < h.maxsize) || throw(ArgumentError("Heap capacity exceeded"))
     append!(h.tree, item)
-    h.size += 1; h.tree.size += 1
+    h.size += 1
     _siftup!(h, h.size)
 end
     
