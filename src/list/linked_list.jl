@@ -41,7 +41,7 @@ function append!(l::LinkedList, item)
 end
 
 function remove!(l::LinkedList)
-    (l.curr === l.tail) && throw(ArgumentError("No element"))
+    (l.curr === l.tail) && throw(ArgumentError("no current element"))
     item = l.curr.next.data
     if l.curr.next === l.tail
         l.tail = l.curr
@@ -60,7 +60,7 @@ function movetoend!(l::LinkedList)
 end
 
 function movetoposition!(l::LinkedList, pos)
-    (1 <= pos <= l.cnt) || throw(ErrorException("Position out of range"))
+    (1 <= pos <= l.cnt+1) || throw(BoundsError(l, pos))
     l.curr = l.head
     for i = 1:pos-1
        l.curr = l.curr.next 
@@ -93,7 +93,6 @@ function currentposition(l::LinkedList)
 end
 
 function getvalue(l::LinkedList)
-    (l.curr === l.tail) && throw(ArgumentError("No Element"))
+    (l.curr === l.tail) && throw(ArgumentError("no current element"))
     return l.curr.next.data
 end
-
