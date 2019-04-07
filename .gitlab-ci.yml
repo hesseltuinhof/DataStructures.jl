@@ -1,0 +1,7 @@
+test:
+    image: julia:1.1.0
+    script:
+        - julia -e 'using Pkg;
+                    Pkg.clone(pwd());
+                    Pkg.build("DataStructures");
+                    Pkg.test("DataStructures")'
