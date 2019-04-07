@@ -6,7 +6,7 @@ end
 
 isempty(l::LinkedStack) = l.size == 0
 length(l::LinkedStack) = l.size
-topvalue(l::LinkedStack) = isempty(l) ? throw(ArgumentError("Stack is empty")) : l.top.data
+topvalue(l::LinkedStack) = isempty(l) ? throw(ArgumentError("stack must be non-empty")) : l.top.data
 
 function push!(l::LinkedStack, item)
     l.top = LinkNode(l.top, item)
@@ -14,7 +14,7 @@ function push!(l::LinkedStack, item)
 end
 
 function pop!(l::LinkedStack)
-    (l.size == 0) && throw(ArgumentError("Stack is empty"))
+    (l.size == 0) && throw(ArgumentError("stack must be non-empty"))
     item = l.top.data
     l.top = l.top.next
     l.size -= 1

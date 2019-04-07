@@ -12,7 +12,7 @@ end
 
 isempty(q::LinkedQueue) = q.size == 0
 length(q::LinkedQueue) = q.size
-frontvalue(q::LinkedQueue) = isempty(q) ? throw(ArgumentError("Queue is empty")) : q.front.next.data
+frontvalue(q::LinkedQueue) = isempty(q) ? throw(ArgumentError("queue must be non-empty")) : q.front.next.data
 
 
 function enqueue!(q::LinkedQueue, item)
@@ -21,7 +21,7 @@ function enqueue!(q::LinkedQueue, item)
 end
 
 function dequeue!(q::LinkedQueue)
-    (q.size == 0) && throw(ArgumentError("Queue is empty"))
+    (q.size == 0) && throw(ArgumentError("queue must be non-empty"))
     item = q.front.next.data
     if q.front.next === q.rear
         q.rear = q.front
