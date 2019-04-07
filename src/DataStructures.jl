@@ -11,7 +11,7 @@ export ArrayBasedList, LinkedList, LinkNode
 export AbstractStack
 export LinkedStack
 
-export AbstractQueque
+export AbstractQueue
 export LinkedQueue, PriorityQueue, KeyValuePair
 
 export AbstractDictionary
