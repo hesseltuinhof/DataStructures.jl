@@ -1,9 +1,3 @@
-function test_interface(::Type{T}) where T
-    for S in subtypes(T)
-        _test_interface(S{Int}) 
-    end
-end
-
 function _test_interface(::Type{T}) where T<:AbstractList
     @testset "$(T)" begin
         l = T()
@@ -94,9 +88,3 @@ function _test_interface(::Type{T}) where T<:AbstractStack
         end
     end
 end
-
-
-test_interface(AbstractList)
-test_interface(AbstractQueue)
-test_interface(AbstractStack)
-
