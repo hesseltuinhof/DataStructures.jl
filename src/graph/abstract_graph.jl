@@ -1,11 +1,10 @@
 abstract type AbstractGraph end
 
-# TODO Add additional types; make more general
 const Vertex = Int
 
-### Interface
+# Notation: V=[n], edges e=(i,j) where i,j ∈ [n]
 
-# Notation: V={v₁,….vₙ}, edges e=(v,w) where v,w ∈ V
+### Interface
 
 # Return the number of vertices and edges.
 countedges(g::AbstractGraph) = nothing
@@ -30,13 +29,4 @@ getweight(g::AbstractGraph, v::Vertex, w::Vertex) = nothing
 # Set and return the mark value for a vertex.
 getmark(g::AbstractGraph, v::Vertex) = nothing
 setmark!(g::AbstractGraph, v::Vertex, value) = nothing
-
-# TODO Add additional functions insert/remove for vertices 
-#      (not covered in book)
-
-# Insert n additional vertices to the graph.
-addvertex!(g::AbstractGraph, n::Int) = nothing
-
-# Remove and return a vertex.
-remove!(g::AbstractGraph, v::Vertex) = nothing
 
