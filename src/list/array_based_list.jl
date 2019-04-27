@@ -1,5 +1,3 @@
-const DEFAULT_MAX_SIZE = 1024
-
 mutable struct ArrayBasedList{T} <: AbstractList{T}
     maxsize::Int
     size::Int

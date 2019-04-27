@@ -16,6 +16,7 @@ function test_interface(::Type{T}, ::Type{U}) where {T,U}
 end
 
 # run tests
+
 include("./list.jl")
 test_interface(AbstractList, Int)
 test_interface(AbstractQueue, Int)
@@ -23,3 +24,5 @@ test_interface(AbstractStack, Int)
 
 include("./graph.jl")
 test_interface(AbstractGraph)
+
+include("./tree.jl")

@@ -4,9 +4,9 @@ mutable struct KeyValuePair{T, S}
 end
 
 mutable struct PriorityQueue{T<:KeyValuePair} #<: AbstractQueue{T}
-    heap::Heap{T}
+    heap::BinaryHeap{T}
     function PriorityQueue{T}(data) where T
-        heap = Heap{T}(data, (x,y)->isless(y.priority, x.priority))
+        heap = BinaryHeap{T}(data, (x,y)->isless(y.priority, x.priority))
         new(heap)
     end
 end

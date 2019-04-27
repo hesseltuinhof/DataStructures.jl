@@ -1,5 +1,9 @@
 module DataStructures
 
+### Constants
+
+const DEFAULT_MAX_SIZE = 1024
+
 ### List related
 
 import Base: append!, insert!, pop!, push!
@@ -50,7 +54,7 @@ export getvalue, setvalue!, setleftchild!, setrightchild!, isleaf
 export getkey, setkey!
 
 export AbstractTree
-export BinarySearchTree, CompleteBinaryTree, Heap, MinHeap, MaxHeap
+export BinaryHeap, BinarySearchTree, CompleteBinaryTree, MaxHeap, MinHeap
 
 export parent, leftchild, rightchild, leftsibling, rightsibling
 export peek, buildheap!

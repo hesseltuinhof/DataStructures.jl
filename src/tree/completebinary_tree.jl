@@ -6,7 +6,7 @@ mutable struct CompleteBinaryTree{T} <: AbstractTree{T}
         new(data, size)
     end
     function CompleteBinaryTree{T}(data) where T
-        new(data, length(data))
+        new(copy(data), length(data))
     end
 end
 
