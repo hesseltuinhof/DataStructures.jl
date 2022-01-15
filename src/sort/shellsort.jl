@@ -18,9 +18,8 @@ function shellsort!(a::Vector, isless=isless)
                     end
                 end
             end
-            println(a)
         end
-    end 
+    end
     a
 end
 
