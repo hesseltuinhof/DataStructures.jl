@@ -26,3 +26,5 @@ include("./graph.jl")
 test_interface(AbstractGraph)
 
 include("./tree.jl")
+
+include("./sort.jl")

@@ -45,7 +45,7 @@ include("./list/linked_stack.jl")
 
 ### Binary trees related
 
-import Base: getkey, parent
+import Base: getkey, parent, peek
 
 export BinaryNode
 export BinarySearchNode
@@ -57,7 +57,7 @@ export AbstractTree
 export BinaryHeap, BinarySearchTree, CompleteBinaryTree, MaxHeap, MinHeap
 
 export parent, leftchild, rightchild, leftsibling, rightsibling
-export peek, buildheap!
+export buildheap!
 
 include("./tree/abstract_binarynode.jl")
 include("./tree/abstract_tree.jl")
@@ -103,10 +103,10 @@ include("./sort/shellsort.jl")
 export insertionsort!, mergesort!, selectionsort!, shellsort!
 export quicksort!, heapsort!
 
-### Others
-
-include("./search/binarysearch.jl")
+### Search related
 
 export binarysearch
+
+include("./search/binarysearch.jl")
 
 end
