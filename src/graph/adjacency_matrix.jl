@@ -44,3 +44,5 @@ isedge(g::AdjacencyMatrix, v::Vertex, w::Vertex) = g.arr[v, w] != 0
 getweight(g::AdjacencyMatrix, v::Vertex, w::Vertex) = g.arr[v, w]
 getmark(g::AdjacencyMatrix, v::Vertex) = g.mark[v]
 setmark!(g::AdjacencyMatrix, v::Vertex, value) = (g.mark[v] = value)
+
+==(a::AdjacencyMatrix, b::AdjacencyMatrix) = a.arr == b.arr

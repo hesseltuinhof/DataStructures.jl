@@ -4,6 +4,7 @@ function depthfirstsearch!(g::AbstractGraph, v::Vertex)
     let w = first(g, v)
         while w <= countvertices(g)
             if getmark(g, w) == 0
+                #process(g, v, w)
                 println(v, w)
                 depthfirstsearch!(g, w)
             end

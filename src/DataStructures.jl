@@ -71,7 +71,7 @@ include("./list/priorityqueue.jl") # belongs to list section
 
 ### Graph related
 
-import Base: first
+import Base: first, ==
 
 export AbstractGraph
 export AdjacencyList, AdjacencyMatrix, Vertex
@@ -81,6 +81,8 @@ export getweight, getmark, setmark!
 
 export breadthfirstsearch!, depthfirstsearch!, topologicalsort!
 
+export dijkstra, jarnik
+
 include("./graph/abstract_graph.jl")
 
 include("./graph/adjacency_list.jl")
@@ -89,6 +91,10 @@ include("./graph/adjacency_matrix.jl")
 include("./graph/bfs.jl")
 include("./graph/dfs.jl")
 include("./graph/topological_sort.jl")
+
+include("./graph/utils.jl")
+include("./graph/dijkstra.jl")
+include("./graph/jarnik.jl")
 
 ### Internal sorting related
 

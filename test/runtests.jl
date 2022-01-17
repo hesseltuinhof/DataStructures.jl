@@ -25,6 +25,8 @@ test_interface(AbstractStack, Int)
 include("./graph.jl")
 test_interface(AbstractGraph)
 
+include("./graph_algorithms.jl")
+
 include("./tree.jl")
 
 include("./sort.jl")

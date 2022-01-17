@@ -1,4 +1,3 @@
-
 function breadthfirstsearch!(g::AbstractGraph, start::Vertex)
     q = LinkedQueue{typeof(start)}()
     enqueue!(q, start)
@@ -19,7 +18,3 @@ function breadthfirstsearch!(g::AbstractGraph, start::Vertex)
         end
     end
 end
-
-
-
-

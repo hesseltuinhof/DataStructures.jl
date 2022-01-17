@@ -19,6 +19,6 @@ function _topologicalsort!(g::AbstractGraph, v::Vertex)
             w = next(g, v, w)
         end
     end
+    #postvisit(g, v)
     println(v)
 end
-
